@@ -30,9 +30,9 @@ function reverseBaseSort(arr) {
   // })
   // return sorted;
 
-  return arr.sort((a,b)=>{
-    if(a.toString().length >= b.toString().length){
-      if(a.toString().length === b.toString().length){
+  return arr.sort((a, b) => {
+    if (a.toString().length >= b.toString().length) {
+      if (a.toString().length === b.toString().length) {
         return a - b
       }
       return b - a
@@ -41,7 +41,22 @@ function reverseBaseSort(arr) {
 }
 
 function frequencySort(arr) {
-  // Your code here
+  return arr.sort((a, b) => {
+    let countA = 0;
+    let countB = 0;
+
+    arr.forEach(el => {
+      if (el === a) countA++;
+      if (el === b) countB++;
+    })
+
+    if (countA <= countB) {
+      if (countA === countB) {
+        return b - a
+      }
+      return -1
+    }
+  })
 }
 
 module.exports = [
